@@ -14,5 +14,5 @@ reveal-md md -w
 
 ## 作成したスライドをHTMLとして出力
 ```sh
-reveal-md md --static html
+reveal-md md --static docs
 ```
