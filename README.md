@@ -1,4 +1,9 @@
 # How to use
+## Reveal.js インストール
+```sh
+npm install -g reveal-md
+```
+
 ## スライド作成
 ルートディレクトリで下記コマンドを実行する。
 ```sh
