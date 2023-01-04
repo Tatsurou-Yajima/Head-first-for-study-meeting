@@ -1,4 +1,7 @@
-# How to use
+## Pages
+https://tatsurou-yajima.github.io/Head-first-for-study-meeting/
+
+## How to use
 ## Reveal.js インストール
 ```sh
 npm install -g reveal-md
