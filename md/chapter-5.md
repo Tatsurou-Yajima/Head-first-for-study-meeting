@@ -79,7 +79,7 @@ class Singleton
 </section>
 
 <section>
-    <iframe src="https://paiza.io/projects/e/ZNK1C3gy3emnWsHtZyZjWw?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe>
+    <a target="__blank" href="https://paiza.io/projects/7eYiqVB2O4CSqWl7Cl6xWQ">実際に動かしてみましょう</a>
 </section>
 ---
 ## まとめ
