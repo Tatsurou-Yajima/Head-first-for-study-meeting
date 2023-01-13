@@ -2,21 +2,28 @@
 
 class Waitress
 {
-    public function showMenu()
+    function showMenu(): void
     {
+        echo 'コーヒー', PHP_EOL;
         foreach (CoffeeMenu::getMenu() as $menu) {
-            echo $menu, PHP_EOL;
+            $this->echoMenu($menu);
         }
 
+        echo 'パンケーキ', PHP_EOL;
         foreach (PancakeMenu::getMenu() as $menu) {
-            echo $menu, PHP_EOL;
+            $this->echoMenu($menu);
         }
+    }
+
+    private function echoMenu(string $menu): void
+    {
+        echo '  ', $menu, PHP_EOL;
     }
 }
 
 class CoffeeMenu
 {
-    static function getMenu()
+    static function getMenu(): array
     {
         return [
             'エスプレッソ',
@@ -27,7 +34,7 @@ class CoffeeMenu
 
 class PancakeMenu
 {
-    static function getMenu()
+    static function getMenu(): array
     {
         return [
             'ホイップパンケーキ',
