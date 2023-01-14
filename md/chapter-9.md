@@ -5,7 +5,7 @@ slideNumber: true
 
 ---
 <style type="text/css"> .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 { text-transform: none; text-align: left;}
-.reveal p {line-height: initial; text-align: left;}.text-center { text-align: center; } li {font-size: 0.9em; line-height: initial;} .reveal small {line-height: 2.3em}
+.reveal p {line-height: initial; text-align: left;}.text-center { text-align: center !important; } li {font-size: 0.9em; line-height: initial;} .reveal small {line-height: 2.3em}
 .reveal pre {width: 100%}
 </style>
 # Iterator & Composite
@@ -22,9 +22,11 @@ Head First デザインパターン 9章
 **要素を一つ一つ取り出す処理** を実装する時に使います。
 
 ---
+<h3 class="text-center">まずは Iterator を使わない例</h3>
+---
 <section data-auto-animate>
-<h3>例えば？</h3>
-<p>カフェでメニューを言う、という仕事をしている人がいます。</p>
+<p>例えば、ウェイトレスさん。</p>
+<p>メニューを口頭で伝えなければなりません。</p>
 
 <img src="https://2.bp.blogspot.com/-jYjhbgQhYiE/VYJcWv6lk3I/AAAAAAAAuXE/uTmyE9V6aM8/s800/job_waitress.png" style="width: 30%; float: left;">
 </section>
@@ -64,14 +66,41 @@ Head First デザインパターン 9章
 </ul>
 
 <p><span style="color: blue;">イテレーター（繰り返し）</span>になっている</p>
+</section>
+<section>
+実装
+
+<pre><code>php chapter-9-before-01.php</code></pre>
 
 </section>
 ---
-## ……？
-<code>foreach</code> でいいんじゃないの？
-
-もしかして、**PHPでは不要？**
+<h2 class="text-center">後日……</h2>
 ---
-## いいえ！
-下記のような
+店長
+<img src="https://3.bp.blogspot.com/-28thHhkG_pQ/VYJcWJ14djI/AAAAAAAAuYI/eLF6N3eMC4M/s800/job_waiter.png" style="width: 30%; float: left; margin-top: 90px;">
 
+今日から<span style="color: brown">ティーメニュー</span>始めるよ。
+
+詳細は担当者に聞いてね！
+
+---
+ティーメニュー担当者
+
+<img src="https://1.bp.blogspot.com/-Q9u4VxRhRh4/V-xthtC0pmI/AAAAAAAA-Jg/Yx2eO7wEK28XnXj__6iOMVzDQrBPpQolgCLcB/s800/job_barista_woman.png" style="width: 30%; float: left;">
+
+はい、これがメニューです。
+
+<pre style="width: 70%; margin-left: 30%;"><code>
+[
+    'ダージリン',
+    'セイロン',
+]
+</code></pre>
+
+配列のキーが必要？
+
+それはウエイトレスさん側で適当に出力しておいてください。
+
+---
+実装
+<pre><code>php chapter-9-before-02.php</code></pre>

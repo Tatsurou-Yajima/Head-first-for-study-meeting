@@ -1,4 +1,6 @@
 <?php
+require("./Coffee.php");
+require("./Pancake.php");
 
 class Waitress
 {
@@ -21,32 +23,6 @@ class Waitress
         foreach ($menuArray as $menu) {
             echo '  ', $menu, PHP_EOL;
         }
-    }
-}
-
-class CoffeeMenu
-{
-    static function getMenu(): array
-    {
-        return [
-            'コーヒー' => [
-                'エスプレッソ',
-                'カフェオレ',
-            ]
-        ];
-    }
-}
-
-class PancakeMenu
-{
-    static function getMenu(): array
-    {
-        return [
-            'パンケーキ' => [
-                'ホイップパンケーキ',
-                'フルーツパンケーキ',
-            ]
-        ];
     }
 }
 
