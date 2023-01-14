@@ -53,12 +53,13 @@ Head First デザインパターン 9章
     <li>フルーツパンケーキ</li>
 </ul>
 
-<p><span style="color: blue;">イテレーター（繰り返し）</span>になっている</p>
+<p><span style="color: blue;">イテレート（繰り返し）</span>処理をしている</p>
 </section>
 <section>
 実装
 
-<pre><code>php chapter-9-before-01.php</code></pre>
+beforeディレクトリ
+<pre><code>php before-01.php</code></pre>
 
 </section>
 ---
@@ -93,7 +94,7 @@ Head First デザインパターン 9章
 
 ---
 仕方ないので、実装
-<pre><code>php chapter-9-before-02.php</code></pre>
+<pre><code>php before-02.php</code></pre>
 ---
 <section data-auto-animate>
 <p>だんだん依存が増えてきた。</p>
