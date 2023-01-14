@@ -10,16 +10,20 @@ class Waitress
     {
         $coffeeMenu = new MenuIterator(CoffeeMenu::getMenu());
         $pancakeMenu = new MenuIterator(PancakeMenu::getMenu());
+        // ↓これは動かない
+        // $teaMenu = new MenuIterator(TeaMenu::getMenu());
 
-        $this->output($coffeeMenu);
-        $this->output($pancakeMenu);
+        $this->output($coffeeMenu, $pancakeMenu);
+        // $this->output($coffeeMenu, $pancakeMenu, $teaMenu);
     }
 
-    private function output(MenuIterator $menuIterator): void
+    private function output(MenuIterator ...$menuIteratorArray): void
     {
-        while ($menuIterator->hasNext()) {
-            $menuItem = $menuIterator->next();
-            echo $menuItem, PHP_EOL;
+        foreach ($menuIteratorArray as $menuIterator) {
+            while ($menuIterator->hasNext()) {
+                $menuItem = $menuIterator->next();
+                echo $menuItem, PHP_EOL;
+            }
         }
     }
 }
