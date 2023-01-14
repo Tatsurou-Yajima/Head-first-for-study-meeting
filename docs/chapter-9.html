@@ -1,30 +1,34 @@
----
-title: Iterator & Composite
-theme: solarized
-slideNumber: true
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
----
+    <title>Iterator & Composite</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
 <style type="text/css"> .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 { text-transform: none; text-align: left;}
 .reveal p {line-height: initial; text-align: left;}.text-center { text-align: center !important; } li {font-size: 0.9em; line-height: initial;} .reveal small {line-height: 2.3em}
 .reveal pre {width: 100%}
 </style>
 # Iterator & Composite
-Head First デザインパターン 9章
----
-## Iterator パターンとは？
+Head First デザインパターン 9章</script></section><section  data-markdown><script type="text/template">## Iterator パターンとは？
 
 コンテナオブジェクトの要素を列挙する手段を独立させることによって、コンテナの内部仕様に依存しない反復子を提供することを目的とする。
 
 <small>[https://ja.wikipedia.org/wiki/Iterator_パターン](https://ja.wikipedia.org/wiki/Iterator_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)</small>
-
----
-## どういう時に使う？
+</script></section><section  data-markdown><script type="text/template">## どういう時に使う？
 **要素を一つ一つ取り出す処理** を実装する時に使います。
-
----
-<h3 class="text-center">まずは Iterator を使わない例</h3>
----
-<section data-auto-animate>
+</script></section><section  data-markdown><script type="text/template"><h3 class="text-center">まずは Iterator を使わない例</h3></script></section><section  data-markdown><script type="text/template"><section data-auto-animate>
 <p>例えば、ウェイトレスさん。</p>
 <p>メニューを口頭で伝えなければなりません。</p>
 
@@ -61,19 +65,13 @@ Head First デザインパターン 9章
 beforeディレクトリ
 <pre><code>php before-01.php</code></pre>
 
-</section>
----
-<h2 class="text-center">後日……</h2>
----
-店長
+</section></script></section><section  data-markdown><script type="text/template"><h2 class="text-center">後日……</h2></script></section><section  data-markdown><script type="text/template">店長
 <img src="https://3.bp.blogspot.com/-28thHhkG_pQ/VYJcWJ14djI/AAAAAAAAuYI/eLF6N3eMC4M/s800/job_waiter.png" style="width: 30%; float: left; margin-top: 90px;">
 
 今日から<span style="color: brown">ティーメニュー</span>始めるよ。
 
 詳細は担当者に聞いてね！
-
----
-ティーメニュー担当者
+</script></section><section  data-markdown><script type="text/template">ティーメニュー担当者
 
 <img src="https://1.bp.blogspot.com/-Q9u4VxRhRh4/V-xthtC0pmI/AAAAAAAA-Jg/Yx2eO7wEK28XnXj__6iOMVzDQrBPpQolgCLcB/s800/job_barista_woman.png" style="width:35%; float: left;">
 
@@ -91,12 +89,8 @@ beforeディレクトリ
 え？配列の構造がおかしい？
 
 適当になんとかしておいてください。
-
----
-仕方ないので、実装
-<pre><code>php before-02.php</code></pre>
----
-<section data-auto-animate>
+</script></section><section  data-markdown><script type="text/template">仕方ないので、実装
+<pre><code>php before-02.php</code></pre></script></section><section  data-markdown><script type="text/template"><section data-auto-animate>
 <p>だんだん依存が増えてきた。</p>
 
 <p>なんとかならないか？</p>
@@ -107,9 +101,7 @@ beforeディレクトリ
 <p>なんとかならないか？</p>
 <p>↓</p>
 <h3>Iterator パターンを使って解決！</h3>
-</section>
----
-<section>
+</section></script></section><section  data-markdown><script type="text/template"><section>
 実装
 
 iteratorディレクトリ
@@ -118,9 +110,7 @@ iteratorディレクトリ
 <section>
     ティーメニューを出力する場合
     <pre><code>php recursive-iterator.php</code></pre>
-</section>
----
-<section data-auto-animate>
+</section></script></section><section  data-markdown><script type="text/template"><section data-auto-animate>
     <h3>Iterator の具体的な利用シーン</h3>
 </section>
 <section data-auto-animate>
@@ -138,3 +128,56 @@ iteratorディレクトリ
     </ul>
     <p><strong>取得したいデータの構造がわからない</strong>時に役立つ！</p>
 </section>
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
