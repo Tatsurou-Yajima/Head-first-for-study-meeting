@@ -16,23 +16,16 @@ class Waitress
 
     private function output(array $menuArray): void
     {
-        foreach ($menuArray as $category => $menu) {
-            echo $category, PHP_EOL;
-            $this->echoMenu($menu);
+        foreach ($menuArray as $menu) {
+            echo $menu, PHP_EOL;
         }
     }
 
     private function outputTea(array $menuArray): void
     {
-        echo 'ティー', PHP_EOL;
-        $this->echoMenu($menuArray);
-    }
-
-    private function echoMenu(array $menuArray): void
-    {
-        foreach ($menuArray as $menu) {
-            echo '  ', $menu, PHP_EOL;
-        }
+        foreach ($menuArray as $valueArray) {
+            $this->output($valueArray);
+        };
     }
 }
 

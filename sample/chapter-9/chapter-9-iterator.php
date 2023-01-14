@@ -25,7 +25,7 @@ function traverseStructure($iterator)
         if ($iterator->hasChildren()) {
             traverseStructure($iterator->getChildren());
         } else {
-            echo $iterator->key(), PHP_EOL, '  ', $iterator->current(), PHP_EOL, PHP_EOL;
+            echo $iterator->key(), ' : ', $iterator->current(), PHP_EOL;
         }
         $iterator->next();
     }

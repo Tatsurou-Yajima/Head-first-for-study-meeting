@@ -35,16 +35,10 @@ Head First デザインパターン 9章
 < 当店のメニューはこちらです！
 
 <ul>
-    <li>コーヒー</li>
-    <ul>
-        <li>ブレンドコーヒー</li>
-        <li>カフェオレ</li>
-    </ul>
-    <li>パンケーキ</li>
-    <ul>
-        <li>ホイップパンケーキ</li>
-        <li>フルーツパンケーキ</li>
-    </ul>
+    <li>ブレンドコーヒー</li>
+    <li>カフェオレ</li>
+    <li>ホイップパンケーキ</li>
+    <li>フルーツパンケーキ</li>
 </ul>
 
 </section>
@@ -53,16 +47,10 @@ Head First デザインパターン 9章
 < 当店のメニューはこちらです！
 
 <ul>
-    <li>コーヒー</li>
-    <ul>
-        <li>ブレンドコーヒー</li>
-        <li>カフェオレ</li>
-    </ul>
-    <li>パンケーキ</li>
-    <ul>
-        <li>ホイップパンケーキ</li>
-        <li>フルーツパンケーキ</li>
-    </ul>
+    <li>ブレンドコーヒー</li>
+    <li>カフェオレ</li>
+    <li>ホイップパンケーキ</li>
+    <li>フルーツパンケーキ</li>
 </ul>
 
 <p><span style="color: blue;">イテレーター（繰り返し）</span>になっている</p>
@@ -86,21 +74,37 @@ Head First デザインパターン 9章
 ---
 ティーメニュー担当者
 
-<img src="https://1.bp.blogspot.com/-Q9u4VxRhRh4/V-xthtC0pmI/AAAAAAAA-Jg/Yx2eO7wEK28XnXj__6iOMVzDQrBPpQolgCLcB/s800/job_barista_woman.png" style="width: 30%; float: left;">
+<img src="https://1.bp.blogspot.com/-Q9u4VxRhRh4/V-xthtC0pmI/AAAAAAAA-Jg/Yx2eO7wEK28XnXj__6iOMVzDQrBPpQolgCLcB/s800/job_barista_woman.png" style="width:35%; float: left;">
 
 はい、これがメニューです。
 
-<pre style="width: 70%; margin-left: 30%;"><code>
+<pre style="width: 70%; margin-left: 35%;"><code>
 [
-    'ダージリン',
-    'セイロン',
+    ['ティー' => 'ダージリン'],
+    ['ティー' => 'セイロン'],
+    ['ハーブティー' => 'ローズヒップ'],
+    ['ハーブティー' => 'カモミール'],
 ]
 </code></pre>
 
-配列のキーが必要？
+え？配列の構造がおかしい？
 
-それはウエイトレスさん側で適当に出力しておいてください。
+適当になんとかしておいてください。
 
 ---
-実装
+仕方ないので、実装
 <pre><code>php chapter-9-before-02.php</code></pre>
+---
+<section data-auto-animate>
+<p>だんだん依存が増えてきた。</p>
+
+<p>なんとかならないか？</p>
+</section>
+<section data-auto-animate>
+<p>だんだん依存が増えてきた。</p>
+
+<p>なんとかならないか？</p>
+<p>↓</p>
+<h3>Iterator パターンを使って解決！</h3>
+</section>
+---
