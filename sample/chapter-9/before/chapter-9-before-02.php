@@ -1,7 +1,7 @@
 <?php
-require("./Coffee.php");
-require("./Pancake.php");
-require("./Tea.php");
+require("./../category/Coffee.php");
+require("./../category/Pancake.php");
+require("./../category/Tea.php");
 
 class Waitress
 {
