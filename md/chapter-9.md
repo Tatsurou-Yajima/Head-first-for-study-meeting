@@ -1,13 +1,13 @@
 ---
-title: Iterator & Composite
-theme: solarized
+title: Iterator & Composite パターン
+theme: beige
 slideNumber: true
-
 ---
 <style type="text/css"> .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 { text-transform: none; text-align: left;}
 .reveal p {line-height: initial; text-align: left;}.text-center { text-align: center !important; } li {font-size: 0.9em; line-height: initial;} .reveal small {line-height: 2.3em}
-.reveal pre {width: 100%}
+.reveal pre {width: 100%} .reveal.slides{width: 100%}
 </style>
+
 # Iterator & Composite
 Head First デザインパターン 9章
 ---
@@ -18,9 +18,23 @@ Head First デザインパターン 9章
 <small>[https://ja.wikipedia.org/wiki/Iterator_パターン](https://ja.wikipedia.org/wiki/Iterator_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)</small>
 
 ---
+<section data-auto-animate>
+
+## どういう時に使う？
+**要素を一つ一つ取り出す処理** を実装する時に使います。
+</section>
+<section data-auto-animate>
+
 ## どういう時に使う？
 **要素を一つ一つ取り出す処理** を実装する時に使います。
 
+例えば……
+
+<ul>
+    <li>あるデータを全件取得し、トリムして出力する</li>
+    <li>あるディレクトリ配下のファイル名をすべて取得する</li>
+</ul>
+</section>
 ---
 <h3 class="text-center">まずは Iterator を使わない例</h3>
 ---
@@ -115,26 +129,74 @@ beforeディレクトリ
 iteratorディレクトリ
 <pre><code>php Waitress.php</code></pre>
 </section>
-<section>
-    ティーメニューを出力する場合
-    <pre><code>php recursive-iterator.php</code></pre>
+<section data-auto-animate>
+<h2>実は……</h2>
+</section>
+<section data-auto-animate>
+<h2>実は……</h2>
+<p>Iterator では、ティーメニューのような構造の変化には対応できません！</p>
+</section>
+<section data-auto-animate>
+<h2>実は……</h2>
+<p>Iterator では、ティーメニューのような構造の変化には対応できません！</p>
+
+ティーメニューを出力するには、<strong><span style="color: purple;">Compositeパターン</span></strong>を組み合わせる必要があります。
 </section>
 ---
 <section data-auto-animate>
-    <h3>Iterator の具体的な利用シーン</h3>
+<h3>Composite パターンとは？</h3>
+
 </section>
 <section data-auto-animate>
-    <h3>Iterator の具体的な利用シーン</h3>
-    <ul>
-        <li>あるデータを全件取得し、トリムして出力する</li>
-        <li>あるディレクトリ配下のファイル名をすべて取得する</li>
-    </ul>
+<h3>Composite パターンとは？</h3>
+
+<p>オブジェクトをツリー構造で表現・処理するためのパターン。</p>
+
+<small>composite: 複数の異なる要素、複合的な</small>
 </section>
 <section data-auto-animate>
-    <h3>Iterator の具体的な利用シーン</h3>
-    <ul>
-        <li>あるデータを全件取得し、トリムして出力する</li>
-        <li>あるディレクトリ配下のファイル名をすべて取得する</li>
-    </ul>
-    <p><strong>取得したいデータの構造がわからない</strong>時に役立つ！</p>
+<p>ツリー構造のイメージ</p>
+<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png">
+</section>
+<section data-auto-animate>
+<p>ツリー構造のイメージ</p>
+<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png" style="float: left;">
+<p>ルート: ①</p>
+
+<p>リーフ: ④, ⑤など </p>
+
+<p>ノード: 矢印（または構成要素）</p>
+
+</section>
+
+---
+<h3>Composite を使うと、何が嬉しいのか？</h3>
+---
+<section data-auto-animate>
+<h3>大まかな処理の流れ</h3>
+<p>すべてのリーフに対し処理を行いたい。</p>
+
+<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png" style="width: 30%; float: left;">
+
+</section>
+<section data-auto-animate>
+<h3>大まかな処理の流れ</h3>
+
+<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png" style="width: 30%; float: left;">
+
+<ol>
+<li>そのノードが小ノードを持つかを判定</li>
+<li>持つ場合は、小ノードで再度1.を実行</li>
+<ul>
+<li>持たない場合はコールバックを実行</li>
+<li><small>↑リーフ</small></li>
+<li>次のノードへ</li>
+</ul>
+</ol>
+</section>
+<section>
+実装
+
+iterator-and-composite ディレクトリ
+<pre><code>php Waitress.php</code></pre>
 </section>
