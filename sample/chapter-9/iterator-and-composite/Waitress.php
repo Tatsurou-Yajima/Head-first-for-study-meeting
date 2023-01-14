@@ -14,16 +14,16 @@ class Waitress
         $this->add(TeaMenu::getMenu());
     }
 
+    private function add(array $menu): void
+    {
+        array_push($this->menuComponent, $menu);
+    }
+
     function showMenu(): void
     {
         $iterator = new RecursiveArrayIterator($this->menuComponent);
 
         iterator_apply($iterator, 'Waitress::traverseStructure', [$iterator]);
-    }
-
-    private function add(array $menu): void
-    {
-        array_push($this->menuComponent, $menu);
     }
 
     static function traverseStructure($iterator)

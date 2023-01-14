@@ -8,7 +8,7 @@ slideNumber: true
 .reveal pre {width: 100%} .reveal.slides{width: 100%}
 </style>
 
-# Iterator & Composite
+<h1 class="text-center">Iterator & Composite</h1>
 Head First デザインパターン 9章
 ---
 ## Iterator パターンとは？
@@ -170,13 +170,25 @@ iteratorディレクトリ
 </section>
 
 ---
+<section data-auto-animate>
 <h3>Composite を使うと、何が嬉しいのか？</h3>
+</section>
+<section data-auto-animate>
+<h3>Composite を使うと、何が嬉しいのか？</h3>
+<p>呼び出し元は、データ構造や型を知らなくて良い！</p>
+</section>
+<section data-auto-animate>
+<h3>Composite を使うと、何が嬉しいのか？</h3>
+<p>呼び出し元は、データ構造や型を知らなくて良い！</p>
+<p>（依存しなくて済む）</p>
+</section>
 ---
 <section data-auto-animate>
 <h3>大まかな処理の流れ</h3>
-<p>すべてのリーフに対し処理を行いたい。</p>
+<p>やりたいこと</p>
+<p>→ すべてのリーフに対し処理を行いたい。</p>
 
-<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png" style="width: 30%; float: left;">
+<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png" style="width: 30%;">
 
 </section>
 <section data-auto-animate>
@@ -200,3 +212,26 @@ iteratorディレクトリ
 iterator-and-composite ディレクトリ
 <pre><code>php Waitress.php</code></pre>
 </section>
+---
+<section data-auto-animate>
+<h3>まとめ</h3>
+</section>
+<section data-auto-animate>
+<h3>まとめ</h3>
+<p><strong>Iterator</strong>: 繰り返し処理をするためのパターン</p>
+</section>
+<section data-auto-animate>
+<h3>まとめ</h3>
+<p><strong>Iterator</strong>: 繰り返し処理をするためのパターン</p>
+<p><strong>Composite</strong>: ツリー構造を処理するためのパターン</p>
+</section>
+<section data-auto-animate>
+<h3>まとめ</h3>
+<p><strong>Iterator</strong>: 繰り返し処理をするためのパターン</p>
+<p><strong>Composite</strong>: ツリー構造を処理するためのパターン</p>
+<p>組み合わせると、どんな構造のデータも簡単に処理できる！</p>
+</section>
+---
+<h3>おしまい</h3>
+
+<img src="https://3.bp.blogspot.com/-nXH3RSnJnl4/Uku9bM6m3vI/AAAAAAAAYiY/fJeMyoTNauk/s800/tatemono_cafe.png">
