@@ -1,5 +1,5 @@
 ## Pages
-https://tatsurou-yajima.github.io/Head-first-for-study-meeting/
+<a href="https://tatsurou-yajima.github.io/Head-first-for-study-meeting/" target="_blank">Pages</a>	
 
 ## How to use
 ## Reveal.js インストール
