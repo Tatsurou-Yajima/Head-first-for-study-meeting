@@ -8,16 +8,38 @@ slideNumber: true
 .reveal pre {width: 100%} .reveal.slides{width: 100%}
 </style>
 
-<h1>Compound パターン</h1>
+<h1>Compound</h1>
+<h2 class="text-center">パターン</h2>
 
 <p class="text-center">Head First デザインパターン 12章</p>
 
 ---
+
+<section data-auto-animate>
+
+## Compound パターンとは？
+
+</section>
+
+<section data-auto-animate>
+
 ## Compound パターンとは？
 
 複数のパターンをコンポーネントとして組み合わせることで、問題を解決しようとするパターン。
 
-例として、**MVC**がある。
+例として、<strong style="color: red;">MVC</strong>がある。
+
+</section>
+
+---
+
+### Compound = 化合物
+
+<img src="https://cdn.ttgtmedia.com/rms/onlineimages/water_molecule-h.png">
+
+Mixture(混合物)とは区別される。
+
+化合物は化学反応によって結合＆分離可能。
 
 ---
 <section data-auto-animate>
@@ -103,7 +125,7 @@ php before_02.php
 
 <p style="margin-top: 10%">鳴き声のカウントを出してくれない？</p>
 
-<p>ガチョウだけね。よろしく。</p>
+<p>カモだけね。よろしく。</p>
 
 </section>
 
@@ -135,7 +157,7 @@ php before_03.php
 
 <img src="https://mikaduki.info/wp-content/uploads/2019/11/businessman_dekiru.png"  style="float: left; margin-top: 20px;">
 
-<p>カモの作成はファクトリでやったほうがいいと思うよ！</p>
+<p style="margin-top: 10%;">カモの作成はファクトリでやったほうがいいと思うよ！</p>
 
 <p><span style="color: blue">カプセル化</span>しよう！</p>
 
@@ -191,9 +213,105 @@ php before_05.php
 
 ---
 
-Compound パターン とは、
+### Compound パターン とは、
 
 <span style="color: brown;">**デザインパターンを組み合わせて課題を解決する**</span>こと！
 
 ---
 
+<section data-auto-animate>
+
+<h3 class="text-center">Compound パターンを使った例として、<strong style="color: red;">MVC</strong>がある。</h3>
+
+</section>
+<section data-auto-animate>
+
+<h3 class="text-center">Compound パターンを使った例として、<strong style="color: red;">MVC</strong>がある。</h3>
+
+- <span style="color: red">M</span> : Model
+    - データ、ロジックなど
+
+
+- <span style="color: red">V</span> : View
+    - ユーザーに画面を表示し、入力を受け取る
+
+- <span style="color: red">C</span> : Controller
+    - View と Model をつなぐ
+
+</section>
+
+---
+
+<section data-auto-animate>
+
+## デザインパターンの使用例
+
+</section>
+
+<section data-auto-animate>
+
+### Strategyパターン
+
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/Y/Yazmatto/20230130/20230130204920.png">
+
+</section>
+
+<section data-auto-animate>
+
+### Observerパターン
+
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/Y/Yazmatto/20230130/20230130205940.png">
+
+</section>
+
+<section data-auto-animate>
+
+### Compositeパターン
+
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/Y/Yazmatto/20230130/20230130210140.png">
+
+</section>
+
+---
+
+<section data-auto-animate>
+
+## まとめ
+
+</section>
+
+<section data-auto-animate>
+
+## まとめ
+
+<span style="color:brown">Compound パターン</span>とは、複数のデザインパターンを組み合わせて課題を解決するデザインパターンである。
+
+</section>
+
+<section data-auto-animate>
+
+## まとめ
+
+<span style="color:brown">Compound パターン</span>とは、複数のデザインパターンを組み合わせて課題を解決するデザインパターンである。
+
+Webフレームワークでおなじみの<span style="color:red">MVC</span>にも取り入れられている。
+
+</section>
+---
+
+## 感想
+何気なく使っていたMVCにも、デザインパターンが取り入れられていたと知って驚いた。
+
+Java → PHP は、ChatGPTにやってもらったので楽だった✌️
+
+```
+in PHP
+
+Javaのコード
+```
+
+---
+
+おしまい
+
+<img src="https://cdn.ttgtmedia.com/rms/onlineimages/water_molecule-h.png">
