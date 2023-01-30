@@ -104,7 +104,7 @@ class DuckSimulator
         // Duckオブジェクトの作成はファクトリーで行う
         $mallardDuck = $duckFactory->createMallardDuck();
         $rubberDuck = $duckFactory->createRubberDuck();
-        $gooseDuck = new QuackCounter(new GooseAdapter(new Goose));
+        $gooseDuck = new GooseAdapter(new Goose);
 
         $this->quack($mallardDuck);
         $this->quack($rubberDuck);

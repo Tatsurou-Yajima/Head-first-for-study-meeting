@@ -80,7 +80,7 @@ class DuckSimulator
         // デコレータでラップ
         $mallardDuck = new QuackCounter(new MallardDuck());
         $rubberDuck = new QuackCounter(new RubberDuck());
-        $gooseDuck = new QuackCounter(new GooseAdapter(new Goose));
+        $gooseDuck = new GooseAdapter(new Goose);
 
         $this->quack($mallardDuck);
         $this->quack($rubberDuck);

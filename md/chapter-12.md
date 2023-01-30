@@ -8,9 +8,9 @@ slideNumber: true
 .reveal pre {width: 100%} .reveal.slides{width: 100%}
 </style>
 
-<h1>Compound</h1>
+<h1>Compound パターン</h1>
 
-<p class="text-center">Head First デザインパターン 9章</p>
+<p class="text-center">Head First デザインパターン 12章</p>
 
 ---
 ## Compound パターンとは？
@@ -22,218 +22,178 @@ slideNumber: true
 ---
 <section data-auto-animate>
 
-## どういう時に使う？
-**要素を一つ一つ取り出す処理** を実装する時に使います。
-</section>
-<section data-auto-animate>
-
-## どういう時に使う？
-**要素を一つ一つ取り出す処理** を実装する時に使います。
-
-例えば……
-
-<ul>
-    <li>あるデータを全件取得し、トリムして出力する</li>
-    <li>あるディレクトリ配下のファイル名をすべて取得する</li>
-</ul>
-</section>
----
-<h3 class="text-center">まずは Iterator を使わない例</h3>
----
-<section data-auto-animate>
-<p>例えば、ウェイトレスさん。</p>
-<p>メニューを口頭で伝えなければなりません。</p>
-
-<img src="https://2.bp.blogspot.com/-jYjhbgQhYiE/VYJcWv6lk3I/AAAAAAAAuXE/uTmyE9V6aM8/s800/job_waitress.png" style="width: 30%; float: left;">
-</section>
-<section data-auto-animate>
-<img src="https://2.bp.blogspot.com/-jYjhbgQhYiE/VYJcWv6lk3I/AAAAAAAAuXE/uTmyE9V6aM8/s800/job_waitress.png" style="width: 30%; float: left;">
-< 当店のメニューはこちらです！
-
-<ul>
-    <li>ブレンドコーヒー</li>
-    <li>カフェオレ</li>
-    <li>ホイップパンケーキ</li>
-    <li>フルーツパンケーキ</li>
-</ul>
+## デザインパターンを組み合わせる！
 
 </section>
 <section data-auto-animate>
-<img src="https://2.bp.blogspot.com/-jYjhbgQhYiE/VYJcWv6lk3I/AAAAAAAAuXE/uTmyE9V6aM8/s800/job_waitress.png" style="width: 30%; float: left;">
-< 当店のメニューはこちらです！
 
-<ul>
-    <li>ブレンドコーヒー</li>
-    <li>カフェオレ</li>
-    <li>ホイップパンケーキ</li>
-    <li>フルーツパンケーキ</li>
-</ul>
+## デザインパターンを組み合わせる！
 
-<p><span style="color: blue;">イテレート（繰り返し）</span>処理をしている</p>
-</section>
-<section>
-実装
+例として、
 
-beforeディレクトリ
-<pre><code>php before-01.php</code></pre>
+<span style="color: brown">カモの鳴き声</span>を出力するシミュレータを作成する。
 
 </section>
 ---
-<h2 class="text-center">後日……</h2>
----
-店長
-<img src="https://3.bp.blogspot.com/-28thHhkG_pQ/VYJcWJ14djI/AAAAAAAAuYI/eLF6N3eMC4M/s800/job_waiter.png" style="width: 30%; float: left; margin-top: 90px;">
 
-今日から<span style="color: brown">ティーメニュー</span>始めるよ。
+### デモ
 
-詳細は担当者に聞いてね！
+<small>Head-first-for-study-meeting/sample/chapter-12/before</small>
 
----
-ティーメニュー担当者
-
-<img src="https://1.bp.blogspot.com/-Q9u4VxRhRh4/V-xthtC0pmI/AAAAAAAA-Jg/Yx2eO7wEK28XnXj__6iOMVzDQrBPpQolgCLcB/s800/job_barista_woman.png" style="width:35%; float: left;">
-
-はい、これがメニューです。
-
-<pre style="width: 70%; margin-left: 35%;"><code>
-[
-    ['ティー' => 'ダージリン'],
-    ['ティー' => 'セイロン'],
-    ['ハーブティー' => 'ローズヒップ'],
-    ['ハーブティー' => 'カモミール'],
-]
-</code></pre>
-
-え？配列の構造がおかしい？
-
-適当になんとかしておいてください。
-
----
-仕方ないので、実装
-<pre><code>php before-02.php</code></pre>
+```php:php
+php before_01.php
+```
 ---
 <section data-auto-animate>
-<p>だんだん依存が増えてきた。</p>
 
-<p>なんとかならないか？</p>
-</section>
-<section data-auto-animate>
-<p>だんだん依存が増えてきた。</p>
-
-<p>なんとかならないか？</p>
-<p>↓</p>
-<h3>Iterator パターンを使って解決！</h3>
-</section>
----
-<section>
-実装
-
-iteratorディレクトリ
-<pre><code>php Waitress.php</code></pre>
-</section>
-<section data-auto-animate>
-<h2>実は……</h2>
-</section>
-<section data-auto-animate>
-<h2>実は……</h2>
-<p>Iterator では、ティーメニューのような構造の変化には対応できません！</p>
-</section>
-<section data-auto-animate>
-<h2>実は……</h2>
-<p>Iterator では、ティーメニューのような構造の変化には対応できません！</p>
-
-ティーメニューを出力するには、<strong><span style="color: purple;">Compositeパターン</span></strong>を組み合わせる必要があります。
-</section>
----
-<section data-auto-animate>
-<h3>Composite パターンとは？</h3>
+## 次の要望
 
 </section>
 <section data-auto-animate>
-<h3>Composite パターンとは？</h3>
 
-<p>オブジェクトをツリー構造で表現・処理するためのパターン。</p>
+## 次の要望
 
-<small>composite: 複数の異なる要素、複合的な</small>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHINjyTvQMOkZaZcuRBHp2CAWuGot_aoEeg&usqp=CAU" style="float: left; margin-top: 20px;">
+
+<p style="margin-top: 10%">カモがいるなら、ガチョウもいるはずだよね？</p>
+
 </section>
 <section data-auto-animate>
-<p>ツリー構造のイメージ</p>
-<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png">
-</section>
-<section data-auto-animate>
-<p>ツリー構造のイメージ</p>
-<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png" style="float: left;">
-<p>ルート: ①</p>
 
-<p>リーフ: ④, ⑤など </p>
+## 次の要望
 
-<p>ノード: 矢印（または構成要素）</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHINjyTvQMOkZaZcuRBHp2CAWuGot_aoEeg&usqp=CAU" style="float: left; margin-top: 20px;">
+
+<p style="margin-top: 10%">カモがいるなら、ガチョウもいるはずだよね？</p>
+
+ガチョウはカモとは<span style="color: red;">鳴き方が違う</span>けど、なんとかしてね。
 
 </section>
 
 ---
+
+### デモ（Adapter パターン）
+
+<small>Head-first-for-study-meeting/sample/chapter-12/before</small>
+
+```php:php
+php before_02.php
+```
+---
+
 <section data-auto-animate>
-<h3>Composite を使うと、何が嬉しいのか？</h3>
+
+## さらなる要望
+
 </section>
 <section data-auto-animate>
-<h3>Composite を使うと、何が嬉しいのか？</h3>
-<p>呼び出し元は、データ構造や型を知らなくて良い！</p>
+
+## さらなる要望
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHINjyTvQMOkZaZcuRBHp2CAWuGot_aoEeg&usqp=CAU" style="float: left; margin-top: 20px;">
+
+<p style="margin-top: 10%">鳴き声のカウントを出してくれない？</p>
+
 </section>
 <section data-auto-animate>
-<h3>Composite を使うと、何が嬉しいのか？</h3>
-<p>呼び出し元は、データ構造や型を知らなくて良い！</p>
-<p>（依存しなくて済む）</p>
+
+## さらなる要望
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHINjyTvQMOkZaZcuRBHp2CAWuGot_aoEeg&usqp=CAU" style="float: left; margin-top: 20px;">
+
+<p style="margin-top: 10%">鳴き声のカウントを出してくれない？</p>
+
+<p>ガチョウだけね。よろしく。</p>
+
 </section>
+
+---
+
+### デモ（Decorator パターン）
+
+<small>Head-first-for-study-meeting/sample/chapter-12/before</small>
+
+```php:php
+php before_03.php
+```
 ---
 <section data-auto-animate>
-<h3>大まかな処理の流れ</h3>
-<p>やりたいこと</p>
-<p>→ すべてのリーフに対し処理を行いたい。</p>
 
-<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png" style="width: 30%;">
+## さらに要望
 
 </section>
 <section data-auto-animate>
-<h3>大まかな処理の流れ</h3>
 
-<img src="https://www.techiedelight.com/wp-content/uploads/Print-Leaf-to-Root-Paths.png" style="width: 30%; float: left;">
+## さらに要望
 
-<ol>
-<li>そのノードが小ノードを持つかを判定</li>
-<li>持つ場合は、小ノードで再度1.を実行</li>
-<ul>
-<li>持たない場合はコールバックを実行</li>
-<li><small>↑リーフ</small></li>
-<li>次のノードへ</li>
-</ul>
-</ol>
+<img src="https://mikaduki.info/wp-content/uploads/2019/11/businessman_dekiru.png"  style="float: left; margin-top: 20px;">
+
 </section>
-<section>
-実装
+<section data-auto-animate>
 
-iterator-and-composite ディレクトリ
-<pre><code>php Waitress.php</code></pre>
+## さらに要望
+
+<img src="https://mikaduki.info/wp-content/uploads/2019/11/businessman_dekiru.png"  style="float: left; margin-top: 20px;">
+
+<p>カモの作成はファクトリでやったほうがいいと思うよ！</p>
+
+<p><span style="color: blue">カプセル化</span>しよう！</p>
+
 </section>
+
 ---
-<section data-auto-animate>
-<h3>まとめ</h3>
-</section>
-<section data-auto-animate>
-<h3>まとめ</h3>
-<p><strong>Iterator</strong>: 繰り返し処理をするためのパターン</p>
-</section>
-<section data-auto-animate>
-<h3>まとめ</h3>
-<p><strong>Iterator</strong>: 繰り返し処理をするためのパターン</p>
-<p><strong>Composite</strong>: ツリー構造を処理するためのパターン</p>
-</section>
-<section data-auto-animate>
-<h3>まとめ</h3>
-<p><strong>Iterator</strong>: 繰り返し処理をするためのパターン</p>
-<p><strong>Composite</strong>: ツリー構造を処理するためのパターン</p>
-<p>組み合わせると、どんな構造のデータも簡単に処理できる！</p>
-</section>
----
-<h3>おしまい</h3>
 
-<img src="https://3.bp.blogspot.com/-nXH3RSnJnl4/Uku9bM6m3vI/AAAAAAAAYiY/fJeMyoTNauk/s800/tatemono_cafe.png">
+### デモ（Abstract Factoryパターン）
+
+<small>Head-first-for-study-meeting/sample/chapter-12/before</small>
+
+```php:php
+php before_04.php
+```
+
+---
+
+<section data-auto-animate>
+
+## 次の要望
+
+</section>
+<section data-auto-animate>
+
+## 次の要望
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHINjyTvQMOkZaZcuRBHp2CAWuGot_aoEeg&usqp=CAU" style="float: left; margin-top: 20px;">
+
+<p style="margin-top: 10%">なんか、カモの管理が面倒になってきたよ。</p>
+
+</section>
+<section data-auto-animate>
+
+## 次の要望
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHINjyTvQMOkZaZcuRBHp2CAWuGot_aoEeg&usqp=CAU" style="float: left; margin-top: 20px;">
+
+<p style="margin-top: 10%">なんか、カモの管理が面倒になってきたよ。</p>
+
+<p>なんとかして、管理を楽にしてくれない？</p>
+
+</section>
+
+---
+
+### デモ（Composite パターン）
+
+<small>Head-first-for-study-meeting/sample/chapter-12/before</small>
+
+```php:php
+php before_05.php
+```
+
+---
+
+Compound パターン とは、
+
+<span style="color: brown;">**デザインパターンを組み合わせて課題を解決する**</span>こと！
+
+---
+
