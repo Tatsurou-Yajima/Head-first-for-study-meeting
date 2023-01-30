@@ -48,6 +48,8 @@ class DuckSimulator
         $flockOfDucks->add($gooseDuck);
 
         $this->quack($flockOfDucks);
+
+        echo 'カモが鳴いた回数は: ', QuackCounter::getQuacks(), '回です。';
     }
 
     public function quack($flockOfDucks)
